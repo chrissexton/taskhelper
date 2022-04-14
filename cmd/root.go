@@ -24,7 +24,8 @@ func init() {
 
 	err := viper.ReadInConfig() // Find and read the config file
 	if err != nil {             // Handle errors reading the config file
-		panic(fmt.Errorf("Fatal error config file: %s", err))
+		fmt.Println(fmt.Errorf("Fatal error config file: %s", err))
+		os.Exit(1)
 	}
 
 	var settings map[string]types.Template
